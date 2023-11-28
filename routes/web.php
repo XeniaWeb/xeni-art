@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Profile\ProfileController;
+use App\Http\Controllers\Resume\ResumeController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -24,6 +25,10 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+
+Route::resource('/cv', ResumeController::class);
+Route::get('/cv', [ResumeController::class, 'index'])->name('cv');
+Route::get('/pdf', [ResumeController::class, 'downloadPdf'])->name('download_pdf');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

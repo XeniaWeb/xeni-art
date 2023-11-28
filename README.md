@@ -53,3 +53,10 @@ sail down
 ```sh
 ./vendor/bin/sail artisan db:seed --force
 ```
+
+### If no ./vendor directory yet
+```sh
+docker run --rm --interactive --tty \
+  --volume $PWD:/app \
+  composer <command>
+```
