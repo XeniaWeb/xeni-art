@@ -26,8 +26,10 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/cv/ru', [ResumeController::class, 'showCvRu'])->name('cv.ru');
+Route::get('/cv/en', [ResumeController::class, 'showCvEn'])->name('cv.en');
+Route::get('/cv/de', [ResumeController::class, 'showCvDe'])->name('cv.de');
 Route::resource('/cv', ResumeController::class);
-Route::get('/cv', [ResumeController::class, 'index'])->name('cv');
 Route::get('/pdf', [ResumeController::class, 'downloadPdf'])->name('download_pdf');
 
 Route::get('/dashboard', function () {

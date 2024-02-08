@@ -9,6 +9,7 @@ use App\Http\Requests\StoreResumeRequest;
 use App\Http\Requests\UpdateResumeRequest;
 use App\Models\Resume;
 use Inertia\Inertia;
+use Inertia\Response;
 
 class ResumeController extends Controller
 {
@@ -17,7 +18,7 @@ class ResumeController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Resume');
+        return Inertia::render('Resume/ResumeEn');
     }
 
     /**
@@ -41,7 +42,28 @@ class ResumeController extends Controller
      */
     public function show(Resume $resume)
     {
-        return Inertia::render('Resume', compact('resume'));
+        return Inertia::render('Resume/ResumeEn', compact('resume'));
+    }
+    /**
+     * Display the specified resource.
+     */
+    public function showCvEn(Resume $resume): Response
+    {
+        return Inertia::render('Resume/ResumeEn', compact('resume'));
+    }
+    /**
+     * Display the specified resource.
+     */
+    public function showCvRu(Resume $resume): Response
+    {
+        return Inertia::render('Resume/ResumeRu', compact('resume'));
+    }
+    /**
+     * Display the specified resource.
+     */
+    public function showCvDe(Resume $resume): Response
+    {
+        return Inertia::render('Resume/ResumeDe', compact('resume'));
     }
 
     /**
