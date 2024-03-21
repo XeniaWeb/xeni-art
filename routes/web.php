@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Profile\ProfileController;
 use App\Http\Controllers\Resume\ResumeController;
+use App\Http\Controllers\Vacancy\EmployerController;
+use App\Http\Controllers\Vacancy\VacancyController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -18,13 +20,22 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
+
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-});
+
+})->name('welcome');
+
+// Route::get('/', function () {
+//     return Inertia::render('Dashboard');
+// })->name('dashboard');
+
+Route::get('/vacancies', [VacancyController::class, 'index'])->name('vacancies.list');
+Route::get('/employers', [EmployerController::class, 'index'])->name('employers.list');
 
 Route::get('/cv/ru', [ResumeController::class, 'showCvRu'])->name('cv.ru');
 Route::get('/cv/en', [ResumeController::class, 'showCvEn'])->name('cv.en');
