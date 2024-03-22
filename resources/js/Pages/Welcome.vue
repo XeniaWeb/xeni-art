@@ -16,7 +16,6 @@ defineProps({
 </script>
 
 <template>
-  <pre>{{ canLogin }}</pre>
   <Head title="Welcome"/>
   <WelcomeLayout>
 <!--    <div class="relative min-h-screen bg-green-100 bg-hero-image">-->
