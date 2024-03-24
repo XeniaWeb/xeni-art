@@ -16,7 +16,12 @@ class EmployerController extends Controller
      */
     public function index(): Response
     {
-        return Inertia::render('Employer/EmployerIndex');
+        // TODO make Repository
+        $employers = Employer::all()->pluck([], 'id' );
+
+        return Inertia::render('Employer/EmployerIndex', [
+            'employers' => $employers,
+            ]);
     }
 
     /**

@@ -13,11 +13,11 @@ class CheckUserRole
     /**
      * Handle an incoming request.
      *
-     * @param  Request  $request
+     * @param Request $request
      * @param  string  $role
      * @return mixed
      */
-    public function handle($request, Closure $next, $role)
+    public function handle(Request $request, Closure $next, string $role): mixed
     {
         /** @var User $user */
         $user = Auth::guard()->user();

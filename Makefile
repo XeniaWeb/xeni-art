@@ -30,6 +30,15 @@ restart: stop start ## Restart all containers
 
 destroy: down ## Destroy all containers
 
+npm-i: ## Install npm dependents
+	@./vendor/bin/sail npm install
+
+npm-b: ## Build front
+	@./vendor/bin/sail npm run build
+
+dev: ## Frontend dev
+	@./vendor/bin/sail npm run dev
+
 ssh: ## SSH into PHP container
 	docker exec -it ${CONTAINER_PHP} sh
 
@@ -44,6 +53,9 @@ migrate: ## Run migration files
 migrate-fresh: ## Clear database and run all migrations
 	@./vendor/bin/sail artisan migrate:fresh
 	#docker exec ${CONTAINER_PHP} php artisan migrate:fresh
+
+seed-fresh: ## Refresh Database fake data
+	@./vendor/bin/sail artisan migrate:fresh --seed
 
 tests: ## Run all tests
 	@./vendor/bin/sail artisan migrate:fresh

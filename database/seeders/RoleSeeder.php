@@ -16,6 +16,8 @@ class RoleSeeder extends Seeder
     public function run(): void
     {
         $this->createAdminRole();
+        $this->createEditorRole();
+        $this->createCustomerRole();
     }
 
     protected function createRole(RoleName $role, Collection $permissions): void
@@ -33,5 +35,28 @@ class RoleSeeder extends Seeder
             ->pluck('id');
 
         $this->createRole(RoleName::ADMIN, $permissions);
+    }
+
+    protected function createEditorRole(): void
+    {
+        $permissions = Permission::query()
+            ->where('name', 'like', 'post.%')
+            ->orWhere('name', 'like', 'work.%')
+            ->orWhere('name', 'like', 'employer.%')
+            ->orWhere('name', 'like', 'vacancy.%')
+            ->pluck('id');
+
+        $this->createRole(RoleName::EDITOR, $permissions);
+    }
+
+    protected function createCustomerRole(): void
+    {
+        $permissions = Permission::query()
+            ->orWhere('name', 'like', 'post.%')
+            ->where('name', 'like', 'employer.%')
+            ->orWhere('name', 'like', 'vacancy.%')
+            ->pluck('id');
+
+        $this->createRole(RoleName::CUSTOMER, $permissions);
     }
 }

@@ -19,6 +19,8 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $this->createAdminUser();
+        $this->createEditorUser();
+        $this->createCustomerUser();
     }
 
     public function createAdminUser(): void
@@ -26,10 +28,34 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'Admin User',
             'email' => 'admin@admin.com',
+            'email_verified_at' => now(),
             'password' => bcrypt('password'),
         ])
             ->roles()
             ->sync(Role::where('name', RoleName::ADMIN->value)->first());
     }
 
+    public function createEditorUser(): void
+    {
+        User::create([
+            'name' => 'Editor User',
+            'email' => 'editor@admin.com',
+            'email_verified_at' => now(),
+            'password' => bcrypt('password'),
+        ])
+            ->roles()
+            ->sync(Role::where('name', RoleName::EDITOR->value)->first());
+    }
+
+    public function createCustomerUser(): void
+    {
+        User::create([
+            'name' => 'Customer User',
+            'email' => 'customer@admin.com',
+            'email_verified_at' => now(),
+            'password' => bcrypt('password'),
+        ])
+            ->roles()
+            ->sync(Role::where('name', RoleName::CUSTOMER->value)->first());
+    }
 }

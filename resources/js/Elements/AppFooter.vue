@@ -14,8 +14,8 @@ defineProps({
 </script>
 
 <template>
-  <div class="mt-auto min-h-[100px] bg-amber-600/10 p-4">
-    <div class="container mx-auto flex items-center justify-between">
+  <div class="mt-auto min-h-[100px] bg-amber-600/10 p-4 fixed right-0 left-0 bottom-0">
+    <div class="container max-w-5xl mx-auto flex items-center justify-between">
       <AppNavigation/>
       <div class="text-amber-600">Footer</div>
 
