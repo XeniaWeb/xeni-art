@@ -30,9 +30,7 @@ class UserSeeder extends Seeder
             'email' => 'admin@admin.com',
             'email_verified_at' => now(),
             'password' => bcrypt('password'),
-        ])
-            ->roles()
-            ->sync(Role::where('name', RoleName::ADMIN->value)->first());
+        ]);
     }
 
     public function createEditorUser(): void
@@ -42,9 +40,7 @@ class UserSeeder extends Seeder
             'email' => 'editor@admin.com',
             'email_verified_at' => now(),
             'password' => bcrypt('password'),
-        ])
-            ->roles()
-            ->sync(Role::where('name', RoleName::EDITOR->value)->first());
+        ]);
     }
 
     public function createCustomerUser(): void
@@ -54,8 +50,6 @@ class UserSeeder extends Seeder
             'email' => 'customer@admin.com',
             'email_verified_at' => now(),
             'password' => bcrypt('password'),
-        ])
-            ->roles()
-            ->sync(Role::where('name', RoleName::CUSTOMER->value)->first());
+        ]);
     }
 }
