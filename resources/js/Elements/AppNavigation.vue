@@ -66,7 +66,7 @@ import {Link} from "@inertiajs/vue3";
         Blog
       </a>
     </li>
-    <pre>{{$page.props.auth.user}}</pre>
+<!--    <pre>{{$page.props.auth.user}}</pre>-->
 <!--    &lt;!&ndash;Menu Login Register Logout&ndash;&gt;-->
     <li v-if="$page.props.auth.user" class="main-nav__item">
       <NavLink

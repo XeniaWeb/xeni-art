@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateEmployerRequest;
 use App\Models\Employer;
 use Inertia\Inertia;
 use Inertia\Response;
+use Spatie\Menu\Laravel\Menu;
 
 class EmployerController extends Controller
 {
