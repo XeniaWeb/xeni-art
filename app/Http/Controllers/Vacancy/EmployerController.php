@@ -8,7 +8,7 @@ use App\Http\Requests\UpdateEmployerRequest;
 use App\Models\Employer;
 use Inertia\Inertia;
 use Inertia\Response;
-use Spatie\Menu\Laravel\Menu;
+use Spatie\Navigation\Navigation;
 
 class EmployerController extends Controller
 {
@@ -17,11 +17,14 @@ class EmployerController extends Controller
      */
     public function index(): Response
     {
+        $navigation = Navigation::make()->tree();
+
         // TODO make Repository
         $employers = Employer::all()->pluck([], 'id' );
 
         return Inertia::render('Employer/EmployerIndex', [
             'employers' => $employers,
+            'navigation' => $navigation,
             ]);
     }
 

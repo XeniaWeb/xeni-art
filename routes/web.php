@@ -34,8 +34,9 @@ Route::get('/', function () {
 //     return Inertia::render('Dashboard');
 // })->name('dashboard');
 
-Route::get('/vacancies', [VacancyController::class, 'index'])->name('vacancies.list');
 Route::resource('/vacancies', VacancyController::class);
+Route::get('/vacancies', [VacancyController::class, 'index'])->name('vacancies.list');
+Route::resource('/employers', EmployerController::class);
 Route::get('/employers', [EmployerController::class, 'index'])->name('employers.list');
 
 Route::get('/cv/ru', [ResumeController::class, 'showCvRu'])->name('cv.ru');
