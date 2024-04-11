@@ -49,6 +49,7 @@
               <tr class="border-r border-black">
                 <td class="px-4 pt-4 pb-1 h-[30px]">
                   <p class="accent mb-2 text-lg">+41 76 410 4101</p>
+                  <p class="mb-1">В России: +7 923 1000 918</p>
                 </td>
               </tr>
               <tr class="border-r border-black">
@@ -154,7 +155,7 @@
                     HTML, CSS3, SASS, Tailwind, JS, Vue.js 3, Vite, Web-стандарты
                   </p>
                   <p class="text-small pb-1">
-                    Docker, GitHub, CI/CD, API Documentation
+                    Docker, GitHub, CI/CD, API Documentation, Linux
                   </p>
                   <p class="text-small pb-1">Опыт командной разработки на принципах Agile и Scrum</p>
                 </td>
