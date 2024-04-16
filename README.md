@@ -55,8 +55,10 @@ sail down
 ```
 
 ### If no ./vendor directory yet
+<https://hub.docker.com/_/composer>
 ```sh
 docker run --rm --interactive --tty \
   --volume $PWD:/app \
+    --user $(id -u):$(id -g) \
   composer install
 ```
