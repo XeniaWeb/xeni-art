@@ -80,14 +80,14 @@ import {Link} from "@inertiajs/vue3";
       <li class="main-nav__item">
         <NavLink
           :href="route('login')"
-          class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-        >Log in
+          class="main-nav__link"
+        >LogIn
         </NavLink>
       </li>
       <li class="main-nav__item">
         <NavLink
           :href="route('register')"
-          class="ms-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+          class="main-nav__link"
         >Register
         </NavLink></li>
     </template>
@@ -108,12 +108,12 @@ import {Link} from "@inertiajs/vue3";
   }
 
   &:hover {
-    @apply text-amber-700;
+    @apply text-gray-200;
   }
 }
 
 .main-nav__link {
-  @apply inline-flex items-center border-b-2 border-transparent text-base font-medium leading-6 text-amber-800 hover:text-amber-700 hover:border-amber-700/40 focus:outline-none focus:text-amber-700 focus:border-amber-700 transition duration-150 ease-in-out;
+  @apply p-2 inline-flex items-center border-b-2 border-transparent text-base font-medium leading-5 text-white hover:text-yellow hover:border-yellow focus:outline-none focus:ring-2 focus:ring-yellow  focus:border-transparent transition duration-150 ease-in-out;
 }
 
 .main-nav__icon {

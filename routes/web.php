@@ -19,20 +19,9 @@ use Inertia\Inertia;
 |
 */
 
-// Route::get('/', function () {
-//
-//     return Inertia::render('Welcome', [
-//         'canLogin' => Route::has('login'),
-//         'canRegister' => Route::has('register'),
-//         'laravelVersion' => Application::VERSION,
-//         'phpVersion' => PHP_VERSION,
-//     ]);
-//
-// })->name('welcome');
-
 Route::get('/', function () {
 
-    return Inertia::render('WelcomeLayout', [
+    return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
@@ -40,6 +29,17 @@ Route::get('/', function () {
     ]);
 
 })->name('welcome');
+
+Route::get('/green', function () {
+
+    return Inertia::render('WelcomeGreen', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+
+})->name('green');
 
 // Route::get('/', function () {
 //     return Inertia::render('Dashboard');

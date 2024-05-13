@@ -12,7 +12,7 @@ import {Link} from "@inertiajs/vue3";
 <template>
   <ul class="main-nav__list">
     <li>
-      <Link :href="route('vacancies.list')" class="main-nav__link">
+      <Link :href="route('vacancies.list')" class="main-nav__link text-white">
         <Square3Stack3DIcon class="main-nav__icon"/>
         Vacancies
       </Link>
@@ -80,7 +80,7 @@ import {Link} from "@inertiajs/vue3";
 }
 
 .main-nav__item {
-  @apply mx-4 flex items-center gap-2 text-2xl text-amber-600;
+  @apply mx-4 flex items-center gap-2 text-2xl text-white;
 
   &:last-child {
     margin-right: 0;
@@ -92,7 +92,7 @@ import {Link} from "@inertiajs/vue3";
 }
 
 .main-nav__link {
-  @apply flex items-center border-b border-transparent text-amber-800;
+  @apply flex items-center border-b border-transparent text-white;
 }
 
 .router-link-active {

@@ -18,7 +18,7 @@ defineProps({
 <template>
   <Head title="Welcome"/>
   <WelcomeLayout>
-<!--    <div class="relative min-h-screen bg-green-100 bg-hero-image">-->
+    <div class="relative min-h-screen bg-green-100 bg-hero-image">
 <!--      <div class="max-w-[1440px] min-h-[80vh] mx-auto p-2">-->
 <!--        <div class="main-nav">-->
 <!--          <nav class="flex items-center justify-between ">-->
@@ -57,7 +57,7 @@ defineProps({
       <!--      </template>-->
       <!--    </div>-->
       <!-- End Menu Login -->
-<!--    </div>-->
+    </div>
   </WelcomeLayout>
 </template>
 
